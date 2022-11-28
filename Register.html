@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="routes/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="msg" align="center"></div>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+            <div class="list-group list-group-flush">
+              <!-- <div class="tab"> -->
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="http://localhost:4021/register">Register</a>
+
+                <!-- <button class="list-group-item list-group-item-action list-group-item-light p-3" onclick="openCity(event, 'Register')">Register</button> -->
+                <!-- <button class="tablinks" onclick="fetchinh()">List</button> -->
+              <!-- </div> -->
+              <!-- <button class="list-group-item list-group-item-action list-group-item-light p-3" onclick="openCity(event, 'List'),fetchinh()" >List</button> -->
+              <!-- </div>   -->
+              <!-- <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Register</a> -->
+              <a class="list-group-item list-group-item-action list-group-item-light p-3" href="http://localhost:4021/List">List</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="http://localhost:4021/shortcuts">Shortcuts</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item active"><a class="nav-link" href="http://localhost:4020/register">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#!">Action</a>
+                                    <a class="dropdown-item" href="#!">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#!">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <br>
+
+
+
+
+
+    <div id="Register" class="tabcontent">
+        <!-- <h3 align="center">Registration</h3> -->
+        <div class="Container">
+        <form id="form" name="fForm">
+            <div class="form-group">
+                <label for="Name" class="form-label">User_Name</label>
+                <input type="text" class="form-control" name="username" id="username" aria-describedby="Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control"  name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">password</label>
+                <input type="password" class="form-control"name="password" id="password" aria-describedby="Password">
+            </div>
+            <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  
+            </form>
+            <div class="submitBtn">
+              <button type="submit" class="btn btn-primary" onclick="onFormSubmit() ;">Register</button>
+                 </div>
+            </div>
+      </div>
+        
+    
+</div>
+</div>
+ <!-- Bootstrap core JS-->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+ <!-- Core theme JS-->
+ <script src="routes/scripts.js"></script>
+    <script>
+        document.getElementById("msg").innerText =" ";
+        let myform = document.forms['fForm'];
+        async function onFormSubmit() {
+        await fetch('/account/addaccount', {
+        method: 'POST',
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+        body: JSON.stringify(
+            {
+                "username": myform.username.value,
+                "email": myform.email.value,
+                "password": myform.password.value
+            }
+        )
+    })
+        .then(res => res.json())
+        .then(res => { 
+        document.getElementById("msg").innerText ="sucessfully registered";
+                   document.forms['fForm'].username.value="";
+                   document.forms['fForm'].email.value="";
+                    document.forms['fForm'].password.value="";
+         })
+        }
+        
+    </script>
+
+</body>
+</html>

@@ -10,144 +10,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="styles.css" rel="stylesheet" />
-        <style>
-            table {
-  border-collapse: collapse;
-  width: 90%;
-  }
-  .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 20%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-} 
-
-.myform {
-        width: 300px; 
-        border: 2px solid;
-        padding: 20px;
-    }
-    .close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-.myForm {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr;
-    grid-auto-flow: row dense;
-    grid-gap: .9em;
-    background: #eee;
-    padding: 1.2em;
-  }
-  .myForm > label  {
-    grid-column: 2;
-    grid-row: auto;
-  }
-  .myForm > input{
-    grid-column: 2;
-    grid-row: auto;
-    padding: 1em; 
-     border: none;
-  }
-  #emmail{grid-column: 2 / 4; 
-  }
-
-@media only screen and (max-width: 768px){
-  
-    .modal-content {
-      text-align: center;
-    margin: auto;
-    padding: 1px;
-    border: 10px solid #888;
-    width: 15%;
-  }
-.close {
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-}
-}
-@media only screen and (max-width: 600px) {
-    .modal {
-      width: 100%; /* Full width */
-  height: 100%;  /*75% */
-
-  }
-  .modal-content {
-      text-align: center;
-    margin: auto;
-    float: left;
-    padding: 1px;
-    border: 0.2px solid #888;
-    width: 9%;
-  }
-.close {
-  color: black;
-  float: left;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-
-}
-@media only screen and (max-width: 325px) {
-  
-
-            /* thead,tbody{
-              width:10px;
-              height:10px
-            } */
-
-    .modal {
-      width: 100%; /* Full width */
-  height: 100%;  /* 75% */
-
-  }
-      .modal-content {
-      text-align: center;
-    /* margin: auto; */
-    float: left;
-    padding: 0.2px;
-    border: 0.1px solid #888;
-    width: 8%;
-  }
-.close {
-  color: black;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-}
-
-
-        </style>
+        <link href="routes/styles.css" rel="stylesheet" />
     </head>
     <body>
         <div id="msg" align="center"></div>
@@ -156,7 +19,15 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Register</a>
+                  <!-- <div class="tab"> -->
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="http://localhost:4021/register">Register</a>
+
+                    <!-- <button class="list-group-item list-group-item-action list-group-item-light p-3" onclick="openCity(event, 'Register')">Register</button> -->
+                    <!-- <button class="tablinks" onclick="fetchinh()">List</button> -->
+                  <!-- </div> -->
+                  <!-- <button class="list-group-item list-group-item-action list-group-item-light p-3" onclick="openCity(event, 'List'),fetchinh()" >List</button> -->
+                  <!-- </div>   -->
+                  <a class="list-group-item list-group-item-action list-group-item-light p-3" href="http://localhost:4021/List"onclick="fetchinh()">List</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
@@ -173,7 +44,7 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li class="nav-item active"><a class="nav-link" href="http://localhost:4020/register">Home</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="http://localhost:4021/">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -188,317 +59,18 @@
                         </div>
                     </div>
                 </nav>
-                <div id="Register" class="tabcontent">
-                    <!-- <h3 align="center">Registration</h3> -->
-                    <div class="Container">
-                    <form id="form" name="fForm">
-                        <div class="form-group">
-                            <label for="Name" class="form-label">User_Name</label>
-                            <input type="text" class="form-control" name="username" id="username" aria-describedby="Name">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control"  name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="form-label">password</label>
-                            <input type="password" class="form-control"name="password" id="password" aria-describedby="Password">
-                        </div>
-                        <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              </div>
-              
-                        </form>
-                        <div class="submitBtn">
-                          <button type="submit" class="btn btn-primary" onclick="onFormSubmit() ;">Register</button>
-                             </div>
-                        </div>
-                  </div>
-                    
-                
-            </div>
-        </div>
-        <br> <br>
-        <div id="List" class="tabcontent" >
-            <button  align="center" onclick="fetchinh()"  class="btn btn-primary">list of users</button>
-            <div class="containe table-responsive" style="overflow-x:auto;">
-                <table id="tableId"  class="table table-bordered table-dark table-hover table-sm">
-                  <thead>   
-                    <tr>
-                      <th>User_Name</th>
-                      <th>Email</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody  id="data">
-                  
-                  </tbody>
-                </table>
-              </div>
-          </div>
-    
-          <div id="myModal" class="modal">
-    
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <div class="grid-container">
-              <form class="myForm">
-                <!-- <div class="form-group">
-                <label for="Name" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" id="name" aria-describedby="Name" value="sandeep">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control"  name="Email" id="e_mail" value="sandy@nichi.com" aria-describedby="emailHelp" placeholder="Enter email">
-              </div>     -->
-                  <label for="Name">Name</label>:
-                  <input type="text" id="name" name="Name" value="sandeep"><br>
-                  <label for="Email">Email</label>
-                  <input type="text" id="e_mail" name="Email" value="sandy@nichi.com"><br>
-                  </form>
-                  </div>
-                  </div>
-                  </div>
+                <br>
+
+               
+               
+       
+
+        
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="scripts.js"></script>
-        <script>
-            function openCity(evt, cityName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
 
-
-
-        document.getElementById("msg").innerText =" ";
-        let myform = document.forms['fForm'];
-        async function onFormSubmit() {
-        await fetch('/account/addaccount', {
-        method: 'POST',
-        headers: { "Content-type": "application/json;charset=UTF-8" },
-        body: JSON.stringify(
-            {
-                "username": myform.username.value,
-                "email": myform.email.value,
-                "password": myform.password.value
-            }
-        )
-    })
-        .then(res => res.json())
-        .then(res => { 
-        document.getElementById("msg").innerText ="sucessfully registered";
-                   document.forms['fForm'].username.value="";
-                   document.forms['fForm'].email.value="";
-                    document.forms['fForm'].password.value="";
-         })
-        }
-        
-
-        let url = (`/account/list`);
-//         fetch(url).then((res) => {
-//   res.json().then((data) => {  // the .json() method parses the JSON response into a JS object literal
-//     if (data.length > 0) {
-//         let person=JSON.parse(data)
-//         for(let val in person){
-//             if(isObject(person[val])){
-//                 for(let val2 in person[val]){
-//                     onsole.log(val2,person[val][val2]);
-//                 }
-//             }else
-//             console.log(val,person[val]);
-//         }
-//     }
-// })
-//         })
-
-//         const isObject=function(val){
-//             if (val==null){
-//                 return false;
-//             }
-//             return (typeof val==='object')
-//         };
-
-
-
-
-
-// async function fetchData() {
-
-//     const response = await fetch(url);
-//     const data = await response.json();
-
-//     data.forEach(obj => {
-//         Object.entries(obj).forEach(([key, value]) => {
-//             console.log(`${key} ${value}`);
-//         });
-//         console.log('-------------------');
-//     });
-// }
-
-
-
-// //using ajax
-// var ajaxhttp=new XMLHttpRequest();
-// var url = (`http://localhost:3000/account/list`);
-// ajaxhttp.open("GET",url,true)
-// ajaxhttp.setRequestHeader("content-type","application/json");
-// ajaxhttp.onreadystatechange=function(){
-//     if(ajaxhttp.readyState==4 && ajaxhttp.status==200){
-//         var jcontent=JSON.parse(ajaxhttp.responseText);
-//         // output.innerHtml=
-//         for(var myObj in jcontent){
-//             console.log(myObj);
-//             console.log(jcontent[myobj].username);
-//         }
-//     }
-// }
-
-
-
-
-
-
-
-function fetchinh(){
-  document.getElementById("msg").innerText=" "
-fetch(url).then((res) => {
-  res.json().then((data) => {  // the .json() method parses the JSON response into a JS object literal
-    if (data.length > 0) {
-    // const json =JSON.parse(data);
-        // console.log(temp.username[1]);
-      var tem=" "   
-      data.forEach((itemData)=>{
-        tem += `<tr onclick=getColumnValue(this) id=${itemData.id}>`;
-        // console.log(`${itemData.id}`);
-        tem += `<td > ${itemData.username} </td>`;
-        tem += `<td> ${itemData.email} </td>`;
-        tem+=`<td><button class="btn" onclick=call(this) id=${itemData.id})><i class="fa fa-trash-o"></i></button></td>`
-        tem += "</tr>";
-      });
-      document.getElementById("data").innerHTML = tem;
-    }
-  });
-}); 
-}
-
-function call(e){
-  let confirmAction=confirm("are you sure to delete");
-  if(confirmAction){
-    fetch(`/account/delete/`+e.id,
-    {
-  method: 'DELETE',
-})
-.then(res => res.text()) // or res.json()
-.then(res => console.log(res))  
-  }
-  }
-
-var modal = document.getElementById("myModal");
-
-// function getColumnValue(e) {
-
-// modal.style.display = "block";
-//   fetch(`/account/list/${e.id}`).then((res) => {
-//   res.json().then((data) => {
-//     console.log(data,"<<<<<<")
-//     document.getElementById("name").value=data.username;
-//     document.getElementById("e_mail").value=data.email;
-//   })
-// })
-// }
-function getColumnValue(e) {
-  modal.style.display = "block";
-  var row = document.getElementById(e.id).innerHTML.toString();
-  var arrayVals = row
-  .replaceAll("td","  ")
-    .toString()
-    .split("</td>")
-    const itemName = arrayVals[0]
-    const itemEmail=arayVals[1]
-
-const altertValue = ` ${itemName}`
-const altervalue2=`${itemEmail}`
-
-document.getElementById("name").value=altertValue;
-document.getElementById("e_mail").value=altervalue2;
-
-}
-var span = document.getElementsByClassName("close")[0];
-
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-
-
- 
-//http://localhost:4004/
-// var conf= window.confirm("are you sure to delete");
-
-
-    
-// getColumnValue(e){
-//   alert("are you sure");
-//   // if(alert=="ok"){
-//   //   `@{/delete/{id}(id=${farmer.farmerId})}`
-//   // }
-// }
-//     for(var key in json.jsonData) {
-//    for (var key1 in json.jsonData[key]) {
-//        console.log(json.jsonData[key][key1])
-//    }
-// }
-//     }
-// })
-// })
-
-
-//       data.forEach((itemData) => {
-//         for (var i=0; i<data.length; i++) {
-//         tem += `<tr>`;
-//         tem += `<td > ${data[i].username} </td>`;
-//         tem += `<td> ${data[i].email} </td>`;
-//         tem += "</tr>";
-//       };
-//       document.getElementById("data").innerHTML = tem;
-//   }
-// })
-// })
-
-
-
-// (async () => {
-//   const res = await fetch(url, {
-//     headers: { Accept: 'application/json' },
-//   });
-//   const json = await res.json();
-//   Object.entries(json).forEach(([key, value]) => {
-//     console.log(`${key} ${value}`);
-//   });
-// })
-
-        </script>
     </body>
 </html>
