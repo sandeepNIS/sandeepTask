@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const routes = require('./routes/Route')
 app.use('/', routes)
 //start server
-app.listen(4020, ()=>{
-    console.log("listeniing at port:4020")
+app.listen(4021, ()=>{
+    console.log("listeniing at port:4021")
 }) 
 
 // app.get("/", (req, res) => {
@@ -29,7 +29,13 @@ app.listen(4020, ()=>{
   // });
 
   
-  
+  app.get("/register", (req, res) =>{
+    res.sendFile(`${__dirname}/Register.html`)
+  });
+
+  app.get("/List", (req, res) =>{
+    res.sendFile(`${__dirname}/List.html`)
+  });
 
   
 //   app.use(express.static(path.join(__dirname, "js")))
